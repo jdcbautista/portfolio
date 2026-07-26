@@ -128,12 +128,17 @@ export function Hero3D() {
           <p className="mt-5 max-w-md text-lg text-white/70">{site.intro}</p>
 
           <div className="pointer-events-auto mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="#work"
+            <button
+              type="button"
+              onClick={() =>
+                document
+                  .getElementById('work')
+                  ?.scrollIntoView({ behavior: 'smooth' })
+              }
               className={buttonStyles({ className: 'shadow-lg' })}
             >
               See the work →
-            </a>
+            </button>
             {site.socials.map((s) => (
               <a
                 key={s.label}
