@@ -25,6 +25,7 @@ export function HeroShowcase() {
   const [speedIdx, setSpeedIdx] = useState(DEFAULT_SPEED)
   const [settingsOpen, setSettingsOpen] = useState(false)
   const settingsRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
   const reduceMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
   const count = projects.length
 
@@ -37,6 +38,26 @@ export function HeroShowcase() {
   const cycleMs = SPEEDS[speedIdx].ms
   const autoplay = !paused && !reduceMotion && count > 1 && cycleMs !== null
   useInterval(() => go(active + 1), autoplay ? cycleMs : null)
+
+  // Left/right arrow keys step the carousel — but only while it's hovered or
+  // focused, so we never hijack the page's normal arrow-key scrolling.
+  useEffect(() => {
+    if (count <= 1) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return
+      if (e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return
+      const el = sectionRef.current
+      if (!el) return
+      const engaged = el.matches(':hover') || el.contains(document.activeElement)
+      if (!engaged) return
+      const t = e.target as HTMLElement | null
+      if (t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)) return
+      e.preventDefault()
+      go(e.key === 'ArrowLeft' ? active - 1 : active + 1)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [active, count, go])
 
   // Close the speed menu on outside click or Escape.
   useEffect(() => {
@@ -74,8 +95,13 @@ export function HeroShowcase() {
   const iconBtn =
     'inline-grid h-9 w-9 place-items-center rounded-full border border-border bg-surface-raised/70 text-muted transition-colors hover:text-text hover:bg-surface-raised focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg'
 
+  // Hover-reveal arrows overlaid on the canvas edges, vertically centered.
+  const overlayBtn =
+    'absolute top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-border bg-surface-raised/85 text-text shadow-lg backdrop-blur transition-opacity duration-200 hover:bg-surface-raised focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring opacity-0 group-hover:opacity-100 focus-visible:opacity-100 motion-reduce:transition-none'
+
   return (
     <section
+      ref={sectionRef}
       aria-roledescription="carousel"
       aria-label="Featured projects"
       className="relative overflow-hidden border-b border-border"
@@ -119,19 +145,9 @@ export function HeroShowcase() {
             </Link>
           </div>
 
-          {/* Controls: prev/next arrows, dot indicators, and a speed selector. */}
+          {/* Controls: dot indicators + a speed selector. (Prev/next live as
+              hover-reveal arrows overlaid on the preview canvas.) */}
           <div className="mt-6 flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => go(active - 1)}
-              className={iconBtn}
-              aria-label="Previous project"
-            >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="m15 18-6-6 6-6" />
-              </svg>
-            </button>
-
             <div className="flex items-center gap-2" role="tablist" aria-label="Choose a featured project">
               {projects.map((project, index) => {
                 const isActive = index === active
@@ -151,17 +167,6 @@ export function HeroShowcase() {
                 )
               })}
             </div>
-
-            <button
-              type="button"
-              onClick={() => go(active + 1)}
-              className={iconBtn}
-              aria-label="Next project"
-            >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </button>
 
             {/* Speed selector */}
             <div className="relative ml-auto" ref={settingsRef}>
@@ -221,9 +226,13 @@ export function HeroShowcase() {
           </div>
         </div>
 
-        {/* Right: the cycling live preview. Only the active app is mounted. */}
+        {/* Right: the cycling live preview. Only the active app is mounted.
+            `group` so the edge arrows reveal on hover of the whole canvas. */}
         <div
-          className={cn('relative', !reduceMotion && 'motion-safe:animate-float')}
+          className={cn(
+            'group relative',
+            !reduceMotion && 'motion-safe:animate-float',
+          )}
         >
           <PreviewFrame label={`${slug(current.meta.title)}.app`}>
             <div key={current.meta.slug} className="animate-fade-in">
@@ -238,6 +247,27 @@ export function HeroShowcase() {
               </Suspense>
             </div>
           </PreviewFrame>
+
+          <button
+            type="button"
+            onClick={() => go(active - 1)}
+            className={cn(overlayBtn, 'left-3')}
+            aria-label="Previous project"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => go(active + 1)}
+            className={cn(overlayBtn, 'right-3')}
+            aria-label="Next project"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
         </div>
       </Container>
     </section>

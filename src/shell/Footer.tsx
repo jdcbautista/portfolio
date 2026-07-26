@@ -1,9 +1,11 @@
 import { Container } from '@/shared/ui'
 import { site } from '@/config/site'
+import { FooterAvatar } from './FooterAvatar'
 
 export function Footer() {
   return (
     <footer className="mt-16 border-t border-border">
+      <FooterAvatar />
       <Container className="flex flex-col items-center justify-between gap-3 py-8 text-sm text-muted sm:flex-row">
         <p>Built with React, Vite &amp; Tailwind.</p>
         {site.socials.length > 0 && (
