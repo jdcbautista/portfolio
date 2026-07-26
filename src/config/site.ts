@@ -37,15 +37,16 @@ export interface SiteConfig {
 
 export const site: SiteConfig = {
   name: 'Julius Bautista',
-  role: 'DevOps / Site Reliability Engineer · AI-Assisted Ops',
-  headline: 'Reliable platforms. Safe, AI-assisted automation.',
+  role: 'Site Reliability Engineer · AI, Cloud & DevOps · Design-driven',
+  headline: 'AI & Cloud Ops, with a designer’s eye.',
   intro:
-    'Site Reliability Engineer with production operations, infrastructure ' +
-    'automation, observability, incident response, and technical enablement. ' +
-    'I build reliable internal platforms with Terraform, AWS, Kubernetes, ' +
-    'CI/CD, and OpenTelemetry — and apply AI agents to operational workflows ' +
-    'with guardrails, policy gates, retries, and auditability. U.S. Marine ' +
-    'Corps veteran, based in Chicago.',
+    'Site Reliability Engineer with 15+ years delivering client-focused ' +
+    'solutions across engineering, education, entrepreneurship, and design. I ' +
+    'support 170+ production services and an automation platform running ' +
+    '~1.6M jobs/year at 99.6% success — Terraform, AWS, Kubernetes, CI/CD, ' +
+    'OpenTelemetry — and build AI agents for operations with guardrails, ' +
+    'policy gates, and auditability. Marine Corps veteran who came up as a ' +
+    'visual artist and founder. Chicago.',
   socials: [
     { label: 'GitHub', href: 'https://github.com/jdcbautista' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/juliusdcbautista/' },
@@ -53,27 +54,27 @@ export const site: SiteConfig = {
   ],
   heroFaces: [
     {
-      kicker: 'RELIABILITY',
-      headline: 'Boring on purpose',
-      sub: 'SLM · incident response · toil ↓',
+      kicker: 'CLOUD & SRE',
+      headline: 'Reliable at scale',
+      sub: '170+ services · 1.6M jobs/yr · 99.6%',
       color: '#e0533d',
     },
     {
-      kicker: 'PLATFORM',
-      headline: 'Self-service infra',
-      sub: 'Terraform · AWS · Kubernetes · CI/CD',
+      kicker: 'AI OPS',
+      headline: 'Agents with guardrails',
+      sub: 'multi-agent · control plane · audit',
       color: '#4c8bf5',
     },
     {
-      kicker: 'OBSERVABILITY',
-      headline: 'See everything',
-      sub: 'Prometheus · Grafana · OpenTelemetry',
+      kicker: 'EDUCATOR',
+      headline: 'Turning veterans into shippers',
+      sub: 'Lead AI/Cloud/DevOps · 160+ grads',
       color: '#3fb950',
     },
     {
-      kicker: 'AI-ASSISTED OPS',
-      headline: 'Agents with guardrails',
-      sub: 'policy gates · retries · audit logs',
+      kicker: 'DESIGN',
+      headline: 'Served clients by design',
+      sub: 'BFA · Visual Arts LLC · NIH, GE',
       color: '#a371f7',
     },
   ],
