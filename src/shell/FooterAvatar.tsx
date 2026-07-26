@@ -15,7 +15,7 @@ import * as THREE from 'three'
 const asset = (file: string) => `${import.meta.env.BASE_URL}${file}`
 
 function Walker() {
-  const character = useFBX(asset('model-low-poly-dude.fbx'))
+  const character = useFBX(asset('jules_cartoon01_fixed.fbx'))
   const animation = useFBX(asset('anim-walking.fbx'))
 
   const mixer = useMemo(() => {
@@ -27,10 +27,29 @@ function Walker() {
     return m
   }, [character, animation])
 
+  // Auto-fit: normalize to a fixed height and drop the feet to the ground line,
+  // so any swapped-in model (with its own native scale) frames correctly.
+  const fit = useMemo(() => {
+    const box = new THREE.Box3().setFromObject(character)
+    const size = new THREE.Vector3()
+    const center = new THREE.Vector3()
+    box.getSize(size)
+    box.getCenter(center)
+    const scale = 2.2 / (size.y || 1)
+    return {
+      scale,
+      position: [
+        -center.x * scale,
+        -box.min.y * scale - 1.05,
+        -center.z * scale,
+      ] as [number, number, number],
+    }
+  }, [character])
+
   useFrame((_, delta) => mixer.update(delta))
 
   return (
-    <primitive object={character} scale={0.0125} position={[0, -1.05, 0]} />
+    <primitive object={character} scale={fit.scale} position={fit.position} />
   )
 }
 

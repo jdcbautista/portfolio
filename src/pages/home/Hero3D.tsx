@@ -152,15 +152,17 @@ export function Hero3D() {
     return () => window.removeEventListener('keydown', onKey)
   }, [count, step])
 
-  const arrowBtn =
-    'group/arrow absolute top-1/2 z-20 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/20 bg-white/10 text-white opacity-0 shadow-lg backdrop-blur transition-opacity duration-200 hover:bg-white/20 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 group-hover:opacity-100 motion-reduce:transition-none'
+  // Frosted-glass edge arrows, kept subtle. Each reveals only when its own 8%
+  // edge strip (or the button itself) is hovered — not the whole canvas.
+  const edgeArrow =
+    'absolute top-1/2 z-20 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-white/10 text-white opacity-0 shadow-lg backdrop-blur-md transition-opacity duration-200 hover:opacity-100 hover:bg-white/20 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 motion-reduce:transition-none'
 
   return (
     <section
       ref={sectionRef}
       aria-roledescription="carousel"
       aria-label={site.headline}
-      className="group relative border-b border-border bg-bg"
+      className="relative border-b border-border bg-bg"
     >
       {/* 3D layer. Clearing targetRef on drag hands control back to free spin. */}
       <div
@@ -196,21 +198,25 @@ export function Hero3D() {
         </Canvas>
       </div>
 
-      {/* Edge arrows: hover-reveal, vertically centered on the canvas. */}
+      {/* Left 8% edge strip is the hover trigger for the left arrow. */}
+      <div className="peer/le absolute inset-y-0 left-0 z-10 w-[8%]" aria-hidden="true" />
       <button
         type="button"
         onClick={() => step(-1)}
-        className={cn(arrowBtn, 'left-4')}
+        className={cn(edgeArrow, 'left-4 peer-hover/le:opacity-60')}
         aria-label="Previous"
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="m15 18-6-6 6-6" />
         </svg>
       </button>
+
+      {/* Right 8% edge strip is the hover trigger for the right arrow. */}
+      <div className="peer/re absolute inset-y-0 right-0 z-10 w-[8%]" aria-hidden="true" />
       <button
         type="button"
         onClick={() => step(1)}
-        className={cn(arrowBtn, 'right-4')}
+        className={cn(edgeArrow, 'right-4 peer-hover/re:opacity-60')}
         aria-label="Next"
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

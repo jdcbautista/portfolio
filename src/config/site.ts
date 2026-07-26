@@ -37,12 +37,15 @@ export interface SiteConfig {
 
 export const site: SiteConfig = {
   name: 'Julius Bautista',
-  role: 'SRE · Applied AI · Educator · Artist',
-  headline: 'I build infra that stays boring in production.',
+  role: 'DevOps / Site Reliability Engineer · AI-Assisted Ops',
+  headline: 'Reliable platforms. Safe, AI-assisted automation.',
   intro:
-    'Filipino-American USMC veteran, Site Reliability Engineer, and DevOps ' +
-    'instructor. I ship AI that survives real constraints and software that ' +
-    'removes friction. Spin the carousel — then pick something to try.',
+    'Site Reliability Engineer with production operations, infrastructure ' +
+    'automation, observability, incident response, and technical enablement. ' +
+    'I build reliable internal platforms with Terraform, AWS, Kubernetes, ' +
+    'CI/CD, and OpenTelemetry — and apply AI agents to operational workflows ' +
+    'with guardrails, policy gates, retries, and auditability. U.S. Marine ' +
+    'Corps veteran, based in Chicago.',
   socials: [
     { label: 'GitHub', href: 'https://github.com/jdcbautista' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/juliusdcbautista/' },
@@ -50,27 +53,27 @@ export const site: SiteConfig = {
   ],
   heroFaces: [
     {
-      kicker: 'SRE / DEVOPS',
-      headline: 'Boring in prod',
-      sub: 'Terraform · AWS · Actions',
+      kicker: 'RELIABILITY',
+      headline: 'Boring on purpose',
+      sub: 'SLM · incident response · toil ↓',
       color: '#e0533d',
     },
     {
-      kicker: 'APPLIED AI',
-      headline: 'Agents that survive',
-      sub: 'Ollama · Graphiti · Neo4j',
+      kicker: 'PLATFORM',
+      headline: 'Self-service infra',
+      sub: 'Terraform · AWS · Kubernetes · CI/CD',
       color: '#4c8bf5',
     },
     {
-      kicker: 'EDUCATOR',
-      headline: 'Students into shippers',
-      sub: 'Code Platoon · curriculum',
+      kicker: 'OBSERVABILITY',
+      headline: 'See everything',
+      sub: 'Prometheus · Grafana · OpenTelemetry',
       color: '#3fb950',
     },
     {
-      kicker: 'VISUAL ARTIST',
-      headline: 'Codes like he composes',
-      sub: 'Blender · generative · story',
+      kicker: 'AI-ASSISTED OPS',
+      headline: 'Agents with guardrails',
+      sub: 'policy gates · retries · audit logs',
       color: '#a371f7',
     },
   ],
