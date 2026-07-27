@@ -22,10 +22,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # three.js pushes the bundler harder than the old build; give V8 room.
+          NODE_OPTIONS: --max-old-space-size=6144
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
