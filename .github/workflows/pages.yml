@@ -25,7 +25,14 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - name: Build
+        timeout-minutes: 15
+        run: |
+          ( while true; do echo "[MON $(date +%T)] $(free -m | awk '/Mem:/{printf "used %d free %d avail %d / %d MB",$3,$4,$7,$2}')"; sleep 8; done ) &
+          MON=$!
+          set +e; npm run build; RC=$?; set -e
+          kill "$MON" 2>/dev/null || true
+          echo "=== build rc=$RC ==="; exit $RC
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
