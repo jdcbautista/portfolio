@@ -35,7 +35,18 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - name: Build (instrumented)
+        timeout-minutes: 20
+        run: |
+          ( while true; do echo "[MON $(date +%T)] $(free -m | awk '/Mem:/{printf "mem %d/%d MB",$3,$2}') | $(free -m | awk '/Swap:/{printf "swap %d/%d MB",$3,$2}')"; sleep 10; done ) &
+          MON=$!
+          set +e
+          npm run build
+          RC=$?
+          set -e
+          kill "$MON" 2>/dev/null || true
+          echo "=== npm run build exit code: $RC ==="
+          exit $RC
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
