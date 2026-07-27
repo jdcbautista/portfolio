@@ -20,15 +20,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # The three.js bundle makes `vite build` peak at ~7GB RSS, which OOM-kills
+      # the ~7GB hosted runner mid-transform. Add swap so the build fits.
+      - name: Add swap space
+        run: |
+          sudo fallocate -l 8G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          free -h
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
       - run: npm ci
       - run: npm run build
-        env:
-          # three.js pushes the bundler harder than the old build; give V8 room.
-          NODE_OPTIONS: --max-old-space-size=6144
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
