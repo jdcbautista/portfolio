@@ -3,6 +3,7 @@ import { RootLayout } from '@/shell/RootLayout'
 import { HomePage } from '@/pages/home/HomePage'
 import { ProjectPage } from '@/pages/project/ProjectPage'
 import { AboutPage } from '@/pages/about/AboutPage'
+import { CvPage } from '@/pages/cv/CvPage'
 import { NotFoundPage } from '@/pages/not-found/NotFoundPage'
 import { RouteError } from './RouteError'
 
@@ -21,6 +22,7 @@ export const router = createHashRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'projects/:slug', element: <ProjectPage /> },
+      { path: 'cv', element: <CvPage /> },
       { path: 'about', element: <AboutPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],

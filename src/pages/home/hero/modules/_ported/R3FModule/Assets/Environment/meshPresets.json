@@ -1,0 +1,46 @@
+{
+  "wallPresets": {
+    "default": {
+      "color": "#ddeeff",
+      "opacity": 1,
+      "renderTopOnly": false,
+      "type": "Static",
+      "slopedTileYOffset": 0
+    },
+    "stone": {
+      "color": "#808080",
+      "opacity": 1,
+      "renderTopOnly": false,
+      "type": "Static",
+      "slopedTileYOffset": 0
+    },
+    "brick": {
+      "color": "#8B4513",
+      "opacity": 1,
+      "renderTopOnly": false,
+      "type": "Static",
+      "slopedTileYOffset": 0
+    },
+    "wood": {
+      "color": "#d3b199",
+      "opacity": 1,
+      "renderTopOnly": false,
+      "type": "Static",
+      "slopedTileYOffset": 0
+    },
+    "glass": {
+      "color": "#88ccff",
+      "opacity": 0.4,
+      "renderTopOnly": false,
+      "type": "Static",
+      "slopedTileYOffset": 0
+    },
+    "molding": {
+      "color": "#ffffff",
+      "opacity": 1,
+      "renderTopOnly": false,
+      "type": "Static",
+      "slopedTileYOffset": 0
+    }
+  }
+}

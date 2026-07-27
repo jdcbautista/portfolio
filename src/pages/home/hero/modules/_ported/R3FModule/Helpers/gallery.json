@@ -1,0 +1,329 @@
+[
+  {
+  "sid": 1,
+  "description": "Main Central Gallery Wall",
+  "area": [10.5, 10],
+  "position": [-1.76, 0, -34.75],
+  "sectionColor": "ffffff",
+  "walls": [
+    {
+      "wid": 1,
+      "collectionName": "Athletes",
+      "type": "north",
+      "intSegments": [1, 1],
+      "extSegments": [1, 1],
+      "interiorWallObjects": [
+        {
+          "type": "canvas",
+          "objectParams": {
+            "imageId": "1503"
+          },
+          "objectOffsets": null,
+          "scale": 1.33
+        },
+        {
+          "type": "canvas",
+          "objectParams": {
+            "imageId": "1728"
+          },
+          "objectOffsets": null,
+          "scale": 1.33
+        }
+      ],
+      "exteriorWallObjects": [
+        {
+          "type": "canvas",
+          "objectParams": {
+            "imageId": "1525"
+          },
+          "objectOffsets": null,
+          "scale": 1.33
+        },
+        {
+          "type": "canvas",
+          "objectParams": {
+            "imageId": "1524"
+          },
+          "objectOffsets": null,
+          "scale": 1.33
+        }
+      ],
+      "wallColor": null,
+      "wallHeightOverride": null,
+      "sidePadDivisor": 30,
+      "manualOffsets": [
+        [0, 0],
+        [0, 0]
+      ]
+    }
+  ],
+  "wallThickness": 0.6,
+  "sectionHeight": 3,
+  "floorColor": null,
+  "floorObjects": null
+},
+  {
+    "sid": 2,
+    "description": "Main Central Gallery Entrance",
+    "area": [16.35, 5.25],
+    "position": [-1.75, 0, -31.275],
+    "sectionColor": "ffffff",
+    "walls": [
+      {
+        "wid": 1,
+        "collectionName": "Headshots",
+        "type": "east",
+        "intSegments": [1],
+        "extSegments": [1],
+        "interiorWallObjects": [
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1804" },
+            "objectOffsets": null,
+            "scale": 0.5
+          }
+        ],
+        "exteriorWallObjects": [
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1405" },
+            "objectOffsets": null,
+            "scale": 0.4
+          }
+        ],
+        "wallColor": null,
+        "wallHeightOverride": null,
+        "sidePadDivisor": null,
+        "manualOffsets": [[0, 0], [0, 0]]
+      },
+      {
+        "wid": 2,
+        "collectionName": "ReturnToForm",
+        "type": "west",
+        "intSegments": [1],
+        "extSegments": [1],
+        "interiorWallObjects": [
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1805" },
+            "objectOffsets": null,
+            "scale": 0.5
+          }
+        ],
+        "exteriorWallObjects": [
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1410" },
+            "objectOffsets": null,
+            "scale": 0.45
+          }
+        ],
+        "wallColor": null,
+        "wallHeightOverride": null,
+        "sidePadDivisor": null,
+        "manualOffsets": [[0, 0], [-0.33, 0]]
+      }
+    ],
+    "wallThickness": 0.8,
+    "sectionHeight": 3,
+    "floorColor": null,
+    "floorObjects": null
+  },
+  {
+    "sid": 3.1,
+    "description": "Main Central Gallery Left Front Walls",
+    "area": [11.5, 10],
+    "position": [-14.95, 0, -33.65],
+    "sectionColor": "ffffff",
+    "walls": [
+      {
+        "wid": 1,
+        "collectionName": "",
+        "type": "west",
+        "intSegments": [1, 1],
+        "extSegments": [1],
+        "interiorWallObjects": [
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1416" },
+            "objectOffsets": null,
+            "scale": 1.125
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1501" },
+            "objectOffsets": null,
+            "scale": 1
+          }
+        ],
+        "exteriorWallObjects": [],
+        "wallColor": null,
+        "wallHeightOverride": null,
+        "sidePadDivisor": 5,
+        "manualOffsets": [[0, 0], [0, 0]]
+      },
+      {
+        "wid": 2,
+        "collectionName": "Melondrama Headshots",
+        "type": "south",
+        "intSegments": [1, 1, 1],
+        "extSegments": [1],
+        "interiorWallObjects": [
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1402" },
+            "objectOffsets": null,
+            "scale": 1.25
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1409" },
+            "objectOffsets": null,
+            "scale": 1.25
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1403" },
+            "objectOffsets": null,
+            "scale": 1.25
+          }
+        ],
+        "exteriorWallObjects": [],
+        "wallColor": null,
+        "wallHeightOverride": null,
+        "sidePadDivisor": 5.25,
+        "manualOffsets": [[0, 0], [0, 0]]
+      }
+    ],
+    "wallThickness": 0.65,
+    "sectionHeight": 3,
+    "floorColor": null,
+    "floorObjects": null
+  },
+  {
+    "sid": 3.2,
+    "description": "Main Central Gallery Left Front Walls",
+    "area": [11.5, 20],
+    "position": [-14.95, 0, -48.65],
+    "sectionColor": "ffffff",
+    "walls": [
+      {
+        "wid": 1,
+        "collectionName": "",
+        "type": "west",
+        "intSegments": [2, 1, 1, 1, 1, 1],
+        "extSegments": [1],
+        "interiorWallObjects": [
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1411" },
+            "objectOffsets": [1.25, 0],
+            "scale": 2.5
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1504" },
+            "objectOffsets": [0.33, 0],
+            "scale": 4
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1505" },
+            "objectOffsets": [0.33, 0],
+            "scale": 4
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1425" },
+            "objectOffsets": [-0.75, 0],
+            "scale": 2
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1502" },
+            "objectOffsets": [-2.25, 0],
+            "scale": 6.66
+          }
+        ],
+        "exteriorWallObjects": [],
+        "wallColor": null,
+        "wallHeightOverride": null,
+        "sidePadDivisor": 20,
+        "manualOffsets": [[0.5, 0], [0, 0]]
+      }
+    ],
+    "wallThickness": 0.65,
+    "sectionHeight": 3,
+    "floorColor": null,
+    "floorObjects": null
+  },
+  {
+    "sid": 5,
+    "description": "Main Central Gallery Right Front Walls",
+    "area": [11.5, 30],
+    "position": [11.5, 0, -43.65],
+    "sectionColor": "ffffff",
+    "walls": [
+      {
+        "wid": 1,
+        "collectionName": "",
+        "type": "east",
+        "intSegments": [1, 1, 1, 1, 1, 1, 1],
+        "extSegments": [1],
+        "interiorWallObjects": [
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1525" },
+            "objectOffsets": null,
+            "scale": 3.5
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1610" },
+            "objectOffsets": null,
+            "scale": 3.5
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1614" },
+            "objectOffsets": null,
+            "scale": 3.5
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1618" },
+            "objectOffsets": null,
+            "scale": 3
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1707" },
+            "objectOffsets": null,
+            "scale": 3.5
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1510" },
+            "objectOffsets": null,
+            "scale": 3
+          },
+          {
+            "type": "canvas",
+            "objectParams": { "imageId": "1511" },
+            "objectOffsets": null,
+            "scale": 3
+          }
+        ],
+        "exteriorWallObjects": [],
+        "wallColor": null,
+        "wallHeightOverride": null,
+        "sidePadDivisor": null,
+        "manualOffsets": [[0, 0], [0, 0]]
+      }
+    ],
+    "wallThickness": 0.65,
+    "sectionHeight": 3,
+    "floorColor": null,
+    "floorObjects": null
+  }
+]

@@ -1,0 +1,227 @@
+/* PuzzleMatchGame.module.css */
+
+/* Base sprite classes */
+.spriteFarmer,
+.spriteScholar,
+.spriteRogue {
+  width: 130px;
+  height: 130px;
+  scale: .75;
+  opacity: 1;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+.spriteFarmer { background-image: url('/sprites/sprite_00D_MT_link.png'); }
+.spriteScholar { background-image: url('/sprites/sprite_00B_BO_link.png'); }
+.spriteRogue { background-image: url('/sprites/sprite_00C_BP_link.png'); }
+.spriteFarmer { background-image: url('/sprites/sprite_00D_MT_link.png'); }
+.spriteScholar { background-image: url('/sprites/sprite_00B_BO_link.png'); }
+.spriteRogue { background-image: url('/sprites/sprite_00C_BP_link.png'); }
+
+
+/* Idle animations (static first frame) */
+.idleDown { background-position: 0 -520px; }
+.idleLeft { background-position: 0 -1430px; }
+.idleUp { background-position: 0 -2860px; }
+.idleRight { background-position: 0 -4290px; }
+
+/* Walking animations */
+.walkDown { animation: animateCharacterWalkDown 1s steps(10) infinite; }
+.walkLeft { animation: animateCharacterWalkLeft 1s steps(10) infinite; }
+.walkUp { animation: animateCharacterWalkUp 1s steps(10) infinite; }
+.walkRight { animation: animateCharacterWalkRight 1s steps(10) infinite; }
+
+/* Attacking animations */
+.attackDown { animation: animateCharacterAttackDown 0.6s steps(10) infinite; }
+.attackLeft { animation: animateCharacterAttackLeft 0.6s steps(10) infinite; }
+.attackUp { animation: animateCharacterAttackUp 0.6s steps(10) infinite; }
+.attackRight { animation: animateCharacterAttackRight 0.6s steps(10) infinite; }
+
+/* Frozen state */
+.frozen { animation: none !important; }
+
+/* Clear/Shrink effects */
+.clearDown { animation: clearCharacterDown 0.5s ease-out forwards; }
+.clearLeft { animation: clearCharacterLeft 0.5s ease-out forwards; }
+.clearUp { animation: clearCharacterUp 0.5s ease-out forwards; }
+.clearRight { animation: clearCharacterRight 0.5s ease-out forwards; }
+
+/* Match clear effects with flash */
+.matchClearDown { animation: matchClearCharacterDown 0.5s ease-out forwards; }
+.matchClearLeft { animation: matchClearCharacterLeft 0.5s ease-out forwards; }
+.matchClearUp { animation: matchClearCharacterUp 0.5s ease-out forwards; }
+.matchClearRight { animation: matchClearCharacterRight 0.5s ease-out forwards; }
+
+/* Walk keyframes */
+@keyframes animateCharacterWalkDown {
+  0% { background-position: 0 -520px; }
+  100% { background-position: -1300px -520px; }
+}
+
+@keyframes animateCharacterWalkLeft {
+  0% { background-position: 0 -650px; }
+  100% { background-position: -1300px -650px; }
+}
+
+@keyframes animateCharacterWalkUp {
+  0% { background-position: 0 -780px; }
+  100% { background-position: -1300px -780px; }
+}
+
+@keyframes animateCharacterWalkRight {
+  0% { background-position: 0 -910px; }
+  100% { background-position: -1300px -910px; }
+}
+
+/* Attack keyframes */
+@keyframes animateCharacterAttackDown {
+  0% { background-position: 0 -520px; }
+  100% { background-position: -1300px -520px; }
+}
+
+@keyframes animateCharacterAttackLeft {
+  0% { background-position: 0 -650px; }
+  100% { background-position: -1300px -650px; }
+}
+
+@keyframes animateCharacterAttackUp {
+  0% { background-position: 0 -780px; }
+  100% { background-position: -1300px -780px; }
+}
+
+@keyframes animateCharacterAttackRight {
+0% { background-position: 0 -910px; }
+  100% { background-position: -1300px -910px; }
+}
+  
+/* Clear keyframes */
+@keyframes clearCharacterDown {
+  from { 
+    background-position: 0 -520px;
+    scale: 1;
+    opacity: 1;
+  }
+  to { 
+    background-position: 0 -520px;
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes clearCharacterLeft {
+  from { 
+    background-position: 0 -650px;
+    scale: 1;
+    opacity: 1;
+  }
+  to { 
+    background-position: 0 -650px;
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes clearCharacterUp {
+  from { 
+    background-position: 0 -780px;
+    scale: 1;
+    opacity: 1;
+  }
+  to { 
+    background-position: 0 -780px;
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes clearCharacterRight {
+  from { 
+    background-position: 0 -910px;
+    scale: 1;
+    opacity: 1;
+  }
+  to { 
+    background-position: 0 -910px;
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+/* Match clear keyframes with flash */
+@keyframes matchClearCharacterDown {
+  0% { 
+    background-position: 0 -520px;
+    scale: 1;
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    scale: 1.2;
+    filter: brightness(2);
+  }
+  100% { 
+    background-position: 0 -520px;
+    scale: 0;
+    opacity: 0;
+    filter: brightness(2);
+  }
+}
+
+@keyframes matchClearCharacterLeft {
+  0% { 
+    background-position: 0 -1430px;
+    scale: 1;
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    scale: 1.2;
+    filter: brightness(2);
+  }
+  100% { 
+    background-position: 0 -1430px;
+    scale: 0;
+    opacity: 0;
+    filter: brightness(2);
+  }
+}
+
+@keyframes matchClearCharacterUp {
+  0% { 
+    background-position: 0 -780px;
+    scale: 1;
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    scale: 1.2;
+    filter: brightness(2);
+  }
+  100% { 
+    background-position: 0 -780px;
+    scale: 0;
+    opacity: 0;
+    filter: brightness(2);
+  }
+}
+
+@keyframes matchClearCharacterRight {
+  0% { 
+    background-position: 0 -4290px;
+    scale: 1;
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    scale: 1.2;
+    filter: brightness(2);
+  }
+  100% { 
+    background-position: 0 -4290px;
+    scale: 0;
+    opacity: 0;
+    filter: brightness(2);
+  }
+}

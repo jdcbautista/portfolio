@@ -31,6 +31,9 @@ export function Header() {
           <NavLink to="/" end className={navLinkClass}>
             Work
           </NavLink>
+          <NavLink to="/cv" className={navLinkClass}>
+            CV
+          </NavLink>
           <NavLink to="/about" className={navLinkClass}>
             About
           </NavLink>

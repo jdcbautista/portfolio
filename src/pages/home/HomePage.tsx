@@ -1,15 +1,16 @@
 import { Container } from '@/shared/ui'
 import { projects } from '@/projects/registry'
-import { Hero3D } from './Hero3D'
-import { VideoReel } from './VideoReel'
+import { HeroModules } from './hero/HeroModules'
+import { Capabilities } from './Capabilities'
 import { HeroShowcase } from './HeroShowcase'
 import { ProjectCard } from './ProjectCard'
 
 export function HomePage() {
   return (
     <>
-      <Hero3D />
-      <VideoReel />
+      <HeroModules />
+      {/* VideoReel parked until a reel exists — Capabilities fills the slot. */}
+      <Capabilities />
       <HeroShowcase />
 
       <Container id="work" className="py-14 sm:py-16">

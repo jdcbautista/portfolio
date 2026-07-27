@@ -27,7 +27,10 @@ export function HeroShowcase() {
   const settingsRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const reduceMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
-  const count = projects.length
+  // Only projects that ship a live demo belong in this preview carousel; case
+  // studies have nothing to embed. If none are enabled, the section renders null.
+  const previewable = projects.filter((p) => p.Component)
+  const count = previewable.length
 
   const go = useCallback(
     (index: number) => setActive(((index % count) + count) % count),
@@ -89,8 +92,9 @@ export function HeroShowcase() {
     return undefined
   }, [])
 
-  const current = projects[active]
+  const current = previewable[active]
   if (!current) return null
+  const Preview = current.Component
 
   const iconBtn =
     'inline-grid h-9 w-9 place-items-center rounded-full border border-border bg-surface-raised/70 text-muted transition-colors hover:text-text hover:bg-surface-raised focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-bg'
@@ -149,7 +153,7 @@ export function HeroShowcase() {
               hover-reveal arrows overlaid on the preview canvas.) */}
           <div className="mt-6 flex items-center gap-3">
             <div className="flex items-center gap-2" role="tablist" aria-label="Choose a featured project">
-              {projects.map((project, index) => {
+              {previewable.map((project, index) => {
                 const isActive = index === active
                 return (
                   <button
@@ -243,7 +247,7 @@ export function HeroShowcase() {
                   </div>
                 }
               >
-                <current.Component />
+                {Preview && <Preview />}
               </Suspense>
             </div>
           </PreviewFrame>

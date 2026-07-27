@@ -49,24 +49,26 @@ export function ProjectPage() {
         )}
       </header>
 
-      {/* The demo is lazy-loaded; Suspense shows a spinner until its chunk lands. */}
-      <Card className="mt-8 p-5 sm:p-7">
-        <div
-          className="mb-5 text-xs font-medium uppercase tracking-wide text-muted"
-          aria-hidden="true"
-        >
-          Live demo
-        </div>
-        <Suspense
-          fallback={
-            <div className="grid place-items-center py-16">
-              <Spinner label={`Loading ${meta.title}`} />
-            </div>
-          }
-        >
-          <Component />
-        </Suspense>
-      </Card>
+      {/* Live demo only when the project ships one; case studies are the copy above. */}
+      {Component && (
+        <Card className="mt-8 p-5 sm:p-7">
+          <div
+            className="mb-5 text-xs font-medium uppercase tracking-wide text-muted"
+            aria-hidden="true"
+          >
+            Live demo
+          </div>
+          <Suspense
+            fallback={
+              <div className="grid place-items-center py-16">
+                <Spinner label={`Loading ${meta.title}`} />
+              </div>
+            }
+          >
+            <Component />
+          </Suspense>
+        </Card>
+      )}
     </Container>
   )
 }

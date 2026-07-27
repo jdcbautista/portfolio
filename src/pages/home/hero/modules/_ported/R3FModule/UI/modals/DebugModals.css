@@ -1,0 +1,204 @@
+
+
+.debug-modal-container {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 200px;
+  background: var(--card); /* Matches the card background from the theme */
+  color: var(--primary); /* Matches the primary text color */
+  border: 1px solid var(--border); /* Matches the border color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Keeps a subtle shadow */
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  opacity: 90%;
+}
+
+.debug-modal-header {
+  position: relative;
+  display: flex;
+  
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.debug-modal-title {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.debug-modal-minimize {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.debug-modal-minimize:hover {
+  background: var(--secondary);
+  color: var(--background);
+  transform: scale(1.1);
+}
+
+.debug-modal-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+.debug-modal-button {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--primary);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.debug-modal-button:hover:not(.disabled) {
+  background: var(--secondary);
+  color: var(--background);
+  transform: scale(1.1);
+}
+
+.debug-modal-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.debug-modal-button:hover {
+  background-color: var(--secondary); /* Accent color for hover */
+  color: var(--background); /* Inverts to background for contrast */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.debug-modal-collapsed {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background: var(--background); /* Accent color for the collapsed icon */
+  color: var(--secondary); /* Contrasting background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  opacity:80%;
+}
+
+.debug-modal-collapsed:hover {
+  background-color: var(--secondary); /* Reverse effect for hover */
+  transform: scale(1.25); /* Slightly enlarge on hover */
+  color: var(--background); /* Contrasting background */
+}
+.sub-modal-container {
+  position: absolute;
+  background: var(--card);
+  color: var(--primary);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 1100; /* Ensure it appears above other modals */
+  opacity: 90%;
+}
+
+.sub-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sub-modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 5px 0; /* Minimal spacing */
+}
+
+.sub-modal-close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--primary);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sub-modal-close-button:hover {
+  background: var(--secondary);
+  color: var(--background);
+  transform: scale(1.1);
+}
+
+.cursor-position-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Three columns: Label, Current Value, Input */
+  gap: 5px; /* Less space between items */
+  align-items: center;
+}
+
+.cursor-position-label {
+  text-align: center;
+  font-weight: bold;
+}
+
+.cursor-position-value {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.cursor-position-input {
+  width: 60px; /* Narrower input box */
+  padding: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+/* Apply Title Spacing Across Debug Menu and Track Controller */
+.debug-modal-header h3,
+.sub-modal-title {
+  margin: 5px 0; /* Consistent minimal spacing */
+  padding: 0; /* Remove excessive padding */
+}
+
+.update-button {
+  padding: 10px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--border);
+  color: var(--primary);
+  cursor: not-allowed; /* Disabled state */
+}
+
+.update-button.disabled {
+  opacity: 0.6;
+}
+
+.track-controller-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Align buttons vertically */
+}

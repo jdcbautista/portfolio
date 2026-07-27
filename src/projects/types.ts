@@ -22,10 +22,14 @@ export interface ProjectMeta {
   links?: ReadonlyArray<{ label: string; href: string }>
 }
 
-/** A registry entry: metadata + a code-split demo component. */
+/**
+ * A registry entry. `Component`/`load` are optional: a project may ship a live,
+ * embeddable demo (the two toy apps) OR be a case study — real work that's
+ * described, not embedded (infra/AI platform work with no React demo to run).
+ */
 export interface ProjectModule {
   meta: ProjectMeta
-  Component: LazyExoticComponent<ComponentType>
+  Component?: LazyExoticComponent<ComponentType>
   /** Triggers the underlying dynamic import — used for idle prefetching. */
-  load: () => Promise<unknown>
+  load?: () => Promise<unknown>
 }

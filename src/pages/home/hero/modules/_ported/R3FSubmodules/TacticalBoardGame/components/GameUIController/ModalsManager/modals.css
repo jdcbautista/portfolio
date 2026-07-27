@@ -1,0 +1,286 @@
+/* ModalsManager/ModalManager.css */
+
+.gameUI-modal-container {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 160px;
+  background: var(--card); /* Matches the card background from the theme */
+  color: var(--primary); /* Matches the primary text color */
+  border: 1px solid var(--border); /* Matches the border color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Keeps a subtle shadow */
+  display: flex;
+  flex-direction: column;
+  z-index: 500;
+  opacity: 90%;
+  /* overflow: visible; */
+
+}
+
+.gameUI-modal-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.gameUI-modal-title {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.gameUI-modal-minimize {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.gameUI-modal-minimize:hover {
+  background: var(--secondary);
+  color: var(--background);
+  transform: scale(1.1);
+}
+
+.gameUI-modal-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 80vh; /* Limits the height to 80% of the viewport height */
+  overflow-y: auto; /* Enables vertical scrolling when content overflows */
+}
+
+.gameUI-modal-button {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--primary);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.gameUI-modal-button:hover:not(.disabled) {
+  background: var(--secondary);
+  color: var(--background);
+  transform: scale(1.1);
+}
+
+.gameUI-modal-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.gameUI-modal-inspect {
+  position: absolute;
+  bottom: 30px;
+  right: 70px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  opacity: 80%;
+}
+
+.gameUI-modal-devplayground-nav {
+  position: absolute;
+  bottom: 30px;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  opacity: 80%;
+  background: var(--background); /* Accent color for the collapsed icon */
+  color: var(--secondary); /* Contrasting background */
+}
+
+.gameUI-modal-devplayground-nav:hover {
+  background-color: var(--secondary); /* Reverse effect for hover */
+  transform: scale(1.25); /* Slightly enlarge on hover */
+  color: var(--background); /* Contrasting background */
+}
+
+.gameUI-modal-devplayground-nav.left {
+  left: 10px;
+}
+
+
+.gameUI-modal-devplayground-nav.right {
+  left: 70px;
+}
+
+
+
+.gameUI-modal-inspect.inspect-toggle-off{
+  background: var(--secondary); /* Accent color for the collapsed icon */
+  color: var(--background); /* Contrasting background */
+}
+
+.gameUI-modal-inspect.inspect-toggle-on{
+  background: var(--background); /* Accent color for the collapsed icon */
+  color: var(--secondary); /* Contrasting background */
+}
+
+.gameUI-modal-inspect:hover {
+  background-color: var(--secondary); /* Reverse effect for hover */
+  transform: scale(1.25); /* Slightly enlarge on hover */
+  color: var(--background); /* Contrasting background */
+}
+
+
+.gameUI-modal-collapsed {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background: var(--background); /* Accent color for the collapsed icon */
+  color: var(--secondary); /* Contrasting background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  opacity: 80%;
+}
+
+.gameUI-modal-collapsed:hover {
+  background-color: var(--secondary); /* Reverse effect for hover */
+  transform: scale(1.25); /* Slightly enlarge on hover */
+  color: var(--background); /* Contrasting background */
+}
+
+.sub-modal-container {
+  /* position: relative; */
+  position: fixed;  /* Changed from absolute to fixed */
+  background: var(--card);
+  color: var(--primary);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 2000;
+  width: 300px;  /* Changed from 60vw to fixed width */
+  min-width: 200px; /* Added min-width for responsiveness */
+  max-width: 400px; /* Reduced from 80vw */
+  height: auto;     /* Changed from 40vh to auto */
+  min-height: 100px; /* Added min-height */
+  max-height: 70vh; 
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.sub-modal-body {
+  display: flex; /* Flex layout */
+  flex-direction: column; /* Stack children vertically */
+  gap: 10px; /* Spacing between elements */
+  overflow-y: auto; /* Ensure vertical scrollability for body content */
+  max-height: calc(70vh - 50px); /* Adjust for header/footer size */
+}
+.sub-modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 5px 0; /* Minimal spacing */
+}
+
+.sub-modal-close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--primary);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sub-modal-close-button:hover {
+  background: var(--secondary);
+  color: var(--background);
+  transform: scale(1.1);
+}
+
+/* Add a wrapper div for Draggable */
+.draggable-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%;
+  height: 100%; */
+  pointer-events: none;  /* Allow clicking through the wrapper */
+}
+
+.cursor-position-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Three columns: Label, Current Value, Input */
+  gap: 5px; /* Less space between items */
+  align-items: center;
+}
+
+.cursor-position-label {
+  text-align: center;
+  font-weight: bold;
+}
+
+.cursor-position-value {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.cursor-position-input {
+  width: 60px; /* Narrower input box */
+  padding: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+/* Apply Title Spacing Across Debug Menu and Track Controller */
+.gameUI-modal-header h3,
+.sub-modal-title {
+  margin: 5px 0; /* Consistent minimal spacing */
+  padding: 0; /* Remove excessive padding */
+}
+
+.update-button {
+  padding: 10px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--border);
+  color: var(--primary);
+  cursor: not-allowed; /* Disabled state */
+}
+
+.update-button.disabled {
+  opacity: 0.6;
+}
+
+.track-controller-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  justify-content: center; /* Center buttons horizontally */
+  align-items: center; /* Align buttons vertically */
+}

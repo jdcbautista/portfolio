@@ -37,16 +37,12 @@ export interface SiteConfig {
 
 export const site: SiteConfig = {
   name: 'Julius Bautista',
-  role: 'Site Reliability Engineer · AI, Cloud & DevOps · Design-driven',
-  headline: 'AI & Cloud Ops, with a designer’s eye.',
+  role: 'Site Reliability Engineer · Designer by training',
+  headline: 'Fifteen years making things people rely on.',
   intro:
-    'Site Reliability Engineer with 15+ years delivering client-focused ' +
-    'solutions across engineering, education, entrepreneurship, and design. I ' +
-    'support 170+ production services and an automation platform running ' +
-    '~1.6M jobs/year at 99.6% success — Terraform, AWS, Kubernetes, CI/CD, ' +
-    'OpenTelemetry — and build AI agents for operations with guardrails, ' +
-    'policy gates, and auditability. Marine Corps veteran who came up as a ' +
-    'visual artist and founder. Chicago.',
+    'I build reliable systems and the tools that keep them calm — cloud, ' +
+    'reliability, and AI operations. Before engineering, I spent years serving ' +
+    'clients as a designer and founder. Marine Corps veteran, Chicago.',
   socials: [
     { label: 'GitHub', href: 'https://github.com/jdcbautista' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/juliusdcbautista/' },
@@ -54,27 +50,27 @@ export const site: SiteConfig = {
   ],
   heroFaces: [
     {
-      kicker: 'CLOUD & SRE',
-      headline: 'Reliable at scale',
-      sub: '170+ services · 1.6M jobs/yr · 99.6%',
+      kicker: 'RELIABILITY',
+      headline: 'Boring, on purpose',
+      sub: 'quiet, dependable systems',
       color: '#e0533d',
     },
     {
       kicker: 'AI OPS',
-      headline: 'Agents with guardrails',
-      sub: 'multi-agent · control plane · audit',
+      headline: 'Agents that stay in bounds',
+      sub: 'guardrails over cleverness',
       color: '#4c8bf5',
     },
     {
-      kicker: 'EDUCATOR',
-      headline: 'Turning veterans into shippers',
-      sub: 'Lead AI/Cloud/DevOps · 160+ grads',
+      kicker: 'TEACHING',
+      headline: 'Veterans into engineers',
+      sub: 'Code Platoon',
       color: '#3fb950',
     },
     {
       kicker: 'DESIGN',
-      headline: 'Served clients by design',
-      sub: 'BFA · Visual Arts LLC · NIH, GE',
+      headline: 'The first ten years',
+      sub: 'craft in the details',
       color: '#a371f7',
     },
   ],

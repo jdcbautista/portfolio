@@ -12,6 +12,9 @@ export default defineConfig(({ command }) => ({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      // Ported R3F canvases live here, isolated from the app's type-check
+      // (see src/ported.d.ts) so their complexity can never break the build.
+      '#ported': path.resolve(__dirname, './src/pages/home/hero/modules/_ported'),
     },
   },
   test: {

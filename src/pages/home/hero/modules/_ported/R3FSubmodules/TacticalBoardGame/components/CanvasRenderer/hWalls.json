@@ -1,0 +1,252 @@
+{
+  "globalOverrides": {
+    "wallMoldingThickness": 0.125,
+    "floorVerticalOffset": 0,
+    "wallVerticalOffset": 0,
+    "clampWallsToFloor": true,
+    "clampWallsToFloorOffset": 0.0
+  },
+  "Scenes": {
+    "MainScene": {
+      "sceneOverrides": {},
+      "Areas": {
+        "Area1": {
+          "areaMetadata": {},
+          "areaOverrides": {
+            "wallThickness": 0.6
+          },
+          "Rooms": {
+            "MainCentralGalleryWall": {
+              "roomMetadata": {},
+              "childOverrides": {},
+              "Entities": {
+                "Walls": [
+                  {
+                    "entityName": "WallNorth.001",
+                    "position": [
+                      11.76,
+                      0,
+                      0
+                    ],
+                    "entityProps": {
+                      "rawDimensions": [
+                        10.5,
+                        3,
+                        0.6
+                      ],
+                      "scaledDimensions": [
+                        10.5,
+                        3,
+                        10.6
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "meshPreset": "stone"
+                    },
+                    "wallMetadata": {},
+                    "childOverrides": {
+                      "clampWallsToFloor": true,
+                      "clampWallsToFloorOffset": 10.0,
+                      "meshPreset": "stone"
+                    },
+                    "wallObjects": {
+                      "interior": [
+                        {
+                          "type": "canvas",
+                          "objectParams": {
+                            "imageId": "1503"
+                          },
+                          "objectOffsets": null,
+                          "scale": 1.33
+                        },
+                        {
+                          "type": "canvas",
+                          "objectParams": {
+                            "imageId": "1728"
+                          },
+                          "objectOffsets": null,
+                          "scale": 1.33
+                        }
+                      ],
+                      "exterior": [
+                        {
+                          "type": "canvas",
+                          "objectParams": {
+                            "imageId": "1525"
+                          },
+                          "objectOffsets": null,
+                          "scale": 1.33
+                        },
+                        {
+                          "type": "canvas",
+                          "objectParams": {
+                            "imageId": "1524"
+                          },
+                          "objectOffsets": null,
+                          "scale": 1.33
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "Area2": {
+          "areaMetadata": {},
+          "areaOverrides": {
+            "wallThickness": 0.8
+          },
+          "Rooms": {
+            "MainCentralGalleryEntrance": {
+              "roomMetadata": {},
+              "childOverrides": {},
+              "Entities": {
+                "Walls": [
+                  {
+                    "entityName": "WallEast.001",
+                    "position": [
+                      6.425000000000001,
+                      2.225,
+                      -31.275
+                    ],
+                    "entityProps": {
+                      "rawDimensions": [
+                        0.8,
+                        3,
+                        5.25
+                      ],
+                      "scaledDimensions": [
+                        0.8,
+                        3,
+                        5.25
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "meshPreset": "stone"
+                    },
+                    "wallMetadata": {},
+                    "childOverrides": {
+                      "dimensions": [
+                        0.8,
+                        3,
+                        5.25
+                      ],
+                      "sidePadDivisor": 30,
+                      "manualOffsets": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          0,
+                          0
+                        ]
+                      ],
+                      "moldingThickness": 0.125,
+                      "verticalOffset": 0
+                    },
+                    "wallObjects": {
+                      "interior": [
+                        {
+                          "type": "canvas",
+                          "objectParams": {
+                            "imageId": "1601"
+                          },
+                          "objectOffsets": null,
+                          "scale": 1.0
+                        },
+                        {
+                          "type": "canvas",
+                          "objectParams": {
+                            "imageId": "1503"
+                          },
+                          "objectOffsets": null,
+                          "scale": 1.0
+                        }
+                      ],
+                      "exterior": []
+                    }
+                  },
+                  {
+                    "entityName": "WallWest.002",
+                    "position": [
+                      -9.925,
+                      2.225,
+                      -31.275
+                    ],
+                    "entityProps": {
+                      "rawDimensions": [
+                        0.8,
+                        3,
+                        5.25
+                      ],
+                      "scaledDimensions": [
+                        0.8,
+                        3,
+                        5.25
+                      ],
+                      "scale": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "meshPreset": "stone"
+                    },
+                    "wallMetadata": {},
+                    "childOverrides": {
+                      "meshPreset": "stone"
+                    },
+                    "wallObjects": {
+                      "interior": [
+                        {
+                          "type": "canvas",
+                          "objectParams": {
+                            "imageId": "1503"
+                          },
+                          "objectOffsets": null,
+                          "scale": 1.0
+                        },
+                        {
+                          "type": "canvas",
+                          "objectParams": {
+                            "imageId": "1503"
+                          },
+                          "objectOffsets": null,
+                          "scale": 1.0
+                        }
+                      ],
+                      "exterior": []
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

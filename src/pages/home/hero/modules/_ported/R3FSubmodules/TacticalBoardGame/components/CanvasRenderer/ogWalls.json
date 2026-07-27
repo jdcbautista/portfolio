@@ -1,0 +1,131 @@
+{
+  "sections": [
+    {
+      "sid": 1,
+      "description": "Main Central Gallery Wall",
+      "sectionDimensions": [10.5, 3, 10],
+      "sectionPosition": [-1.76, 0.725, -34.75],
+      "sectionColor": "#000000",
+      "wallThickness": 0.6,
+      "walls": [
+        {
+          "wid": 1,
+          "wallType": "north",
+          "wallSegments": {
+            "intSegments": [1, 1],
+            "extSegments": [1, 1],
+            "interiorWallObjects": [
+              {
+                "type": "canvas",
+                "objectParams": { "imageId": "1503" },
+                "objectOffsets": null,
+                "scale": 1.33
+              },
+              {
+                "type": "canvas",
+                "objectParams": { "imageId": "1728" },
+                "objectOffsets": null,
+                "scale": 1.33
+              }
+            ],
+            "exteriorWallObjects": [
+              {
+                "type": "canvas",
+                "objectParams": { "imageId": "1525" },
+                "objectOffsets": null,
+                "scale": 1.33
+              },
+              {
+                "type": "canvas",
+                "objectParams": { "imageId": "1524" },
+                "objectOffsets": null,
+                "scale": 1.33
+              }
+            ]
+          },
+          "wallOverrides": {
+            "dimensions": [10.5, 3, 0.6],
+            "sidePadDivisor": 30,
+            "manualOffsets": [[0, 0], [0, 0]],
+            "moldingThickness": 0.125,
+            "verticalOffset": 0
+          }
+        }
+      ],
+      "floors": [],
+      "planes": []
+    },
+    {
+      "sid": 2,
+      "description": "Main Central Gallery Entrance",
+      "sectionDimensions": [16.35, 3, 5.25],
+      "sectionPosition": [-1.75, 0.725, -31.275],
+      "sectionColor": "#ffffff",
+      "wallThickness": 0.8,
+      "walls": [
+        {
+          "wid": 1,
+          "wallType": "east",
+          "wallSegments": {
+            "intSegments": [1, 1],
+            "extSegments": [1],
+            "interiorWallObjects": [
+              {
+                "type": "canvas",
+                "objectParams": { "imageId": "1601" },
+                "objectOffsets": null,
+                "scale": 1.0
+              },
+              {
+                "type": "canvas",
+                "objectParams": { "imageId": "1503" },
+                "objectOffsets": null,
+                "scale": 1.0
+              }
+            ],
+            "exteriorWallObjects": []
+          },
+          "wallOverrides": {
+            "dimensions": [0.8, 3, 5.25],
+            "sidePadDivisor": 30,
+            "manualOffsets": [[0, 0], [0, 0]],
+            "moldingThickness": 0.125,
+            "verticalOffset": 0
+          }
+        },
+        {
+          "wid": 2,
+          "wallType": "west",
+          "wallSegments": {
+            "intSegments": [1, 1],
+            "extSegments": [1],
+            "interiorWallObjects": [
+              {
+                "type": "canvas",
+                "objectParams": { "imageId": "1503" },
+                "objectOffsets": null,
+                "scale": 1.0
+              },
+              {
+                "type": "canvas",
+                "objectParams": { "imageId": "1503" },
+                "objectOffsets": null,
+                "scale": 1.0
+              }
+            ],
+            "exteriorWallObjects": []
+          },
+          "wallOverrides": {
+            "dimensions": [0.8, 3, 5.25],
+            "sidePadDivisor": 30,
+            "manualOffsets": [[0, 0], [-0.33, 0]],
+            "moldingThickness": 0.125,
+            "verticalOffset": 0
+          }
+        }
+      ],
+      "floors": [],
+      "planes": []
+    }
+  ]
+}

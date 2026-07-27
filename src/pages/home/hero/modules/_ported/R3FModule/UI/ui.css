@@ -1,0 +1,154 @@
+.canvasButtonBackground {
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Horizontally center the icon */
+  align-items: center; /* Vertically center the icon */
+  width: 48px; /* Set width for consistent size */
+  height: 48px; /* Set height for consistent size */
+  border-radius: 50%;
+  background: var(--background-80); /* Accent color for the collapsed icon */
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  /* top: 209px; */
+}
+
+.canvasButtonBackground:hover {
+  transform: scale(1.125);
+  background: var(--secondary, #ec4899); /* Accent color on hover */
+  cursor: pointer;
+}
+
+.canvasButton {
+  font-size: 1.25rem !important; /* Adjust icon size */
+  color: var(--secondary); /* Default icon color */
+  border: none;
+  background: none; /* Remove any background from the button itself */
+  transition: transform 0.125s ease, color 0.125s ease; /* Smooth transition for hover effects */
+  cursor: pointer;
+  position: relative; /* Allows precise adjustments */
+  transform: translateY(3px); /* Adjust vertical alignment */
+}
+
+.canvasButtonIcon {
+  font-size: 5rem !important; /* Adjust icon size */
+}
+
+.canvasButton:hover {
+  transform: scale(1.25) translateY(3px); /* Scale up the icon on hover */
+  color: var(--background); /* Change icon color on hover */
+  cursor: pointer;
+}
+
+  
+  
+  .canvasButton:focus {
+    outline: none; /* Remove the blue focus ring */
+    box-shadow: none; /* Remove any additional focus styling */
+  }
+  .canvasButtonWrapper {
+    position: 'relative';
+    display: 'inline-block';
+  }
+
+  /* Modifier for different color button */
+.canvasToggleButton {
+  color: #ec4899 !important; /* Green hover color for toggle button */
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--secondary);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .canvasSubContainerFooter {
+    height: '50px';
+    color: '#fff';
+    display: 'flex';
+    align-items: 'center';
+    padding-bottom: '120px';
+    justify-content: 'center';
+} */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(100%); /* Start off-screen */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* Fully visible */
+    opacity: 1;
+  }
+}
+
+/* Keyframes for slide-out animation */
+@keyframes slideOut {
+  from {
+    transform: translateY(0); /* Fully visible */
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%); /* Slide off-screen */
+    opacity: 0;
+  }
+}
+
+/* Default container style */
+.canvasSubContainer{
+  /* height: '50px'; */
+  /* color: '#fff'; */
+  display: 'flex';
+  align-items: 'center';
+  /* padding-bottom: '120px'; */
+  justify-content: 'center';
+  z-index:1000;
+}
+
+
+/* Default container style */
+.canvasSubContainerFooter {
+  height: '50px';
+  color: '#fff';
+  display: 'flex';
+  align-items: 'center';
+  padding-bottom: '120px';
+  justify-content: 'center';
+}
+
+/* Add slide-in animation */
+.canvasSubContainerFooter.animate-in {
+  animation: slideIn 0.5s forwards; /* Slide in over 0.5s */
+}
+
+/* Add slide-out animation */
+.canvasSubContainerFooter.animate-out {
+  animation: slideOut 0.5s forwards; /* Slide out over 0.5s */
+}
+
+.splashChevronContainer {
+  flex: 1; /* Takes up available space */
+  display: flex;
+  justify-content: center; /* Center contents horizontally */
+  align-items: center; /* Center contents vertically */
+}

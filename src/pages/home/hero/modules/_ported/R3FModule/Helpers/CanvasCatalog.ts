@@ -1,0 +1,773 @@
+type canvasRef = {
+  Code: number;
+  Name: string;
+  FWidth: number;
+  FHeight: number;
+  FileType: string;
+  Filename: string;
+}
+
+const CanvasCatalog: Record<string, canvasRef> = {
+    "1402": {
+      "Code": 1402,
+      "Name": "Melondrama I",
+      "FWidth": 1280,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1402_MelondramaI_1280x1600.jpg"
+    },
+    "1403": {
+      "Code": 1403,
+      "Name": "Melondrama II",
+      "FWidth": 1280,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1403_MelondramaII_1280x1600.jpg"
+    },
+    "1405": {
+      "Code": 1405,
+      "Name": "Anapthalmiac",
+      "FWidth": 1280,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1405_Anapthalmiac_1280x1600.jpg"
+    },
+    "1409": {
+      "Code": 1409,
+      "Name": "Brooding Beauty",
+      "FWidth": 1280,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1409_BroodingBeauty_1280x1600.jpg"
+    },
+    "1410": {
+      "Code": 1410,
+      "Name": "Borderline",
+      "FWidth": 1260,
+      "FHeight": 1260,
+      "FileType": "jpg",
+      "Filename": "1410_Borderline_1260x1260.jpg"
+    },
+    "1411": {
+      "Code": 1411,
+      "Name": "The Sent Down Girl",
+      "FWidth": 1640,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1411_TheSentDownGirl_1640x1200.jpg"
+    },
+    "1416": {
+      "Code": 1416,
+      "Name": "The Creator",
+      "FWidth": 1220,
+      "FHeight": 1500,
+      "FileType": "jpg",
+      "Filename": "1416_TheCreator_1220x1500.jpg"
+    },
+    "1425": {
+      "Code": 1425,
+      "Name": "Patriot02 Pilot",
+      "FWidth": 1280,
+      "FHeight": 1280,
+      "FileType": "jpg",
+      "Filename": "1425_Patriot02Pilot_1280x1280.jpg"
+    },
+    "1501": {
+      "Code": 1501,
+      "Name": "Little Thoughts And Big Ideas",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1501_LittleThoughtsAndBigIdeas_1440x1440.jpg"
+    },
+    "1502": {
+      "Code": 1502,
+      "Name": "You Are Beautiful Child Soldier",
+      "FWidth": 1080,
+      "FHeight": 792,
+      "FileType": "jpg",
+      "Filename": "1502_YouAreBeautifulChildSoldier_1080x792.jpg"
+    },
+    "1503": {
+      "Code": 1503,
+      "Name": "Final Round",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1503_FinalRound_1600x1200.jpg"
+    },
+    "1504": {
+      "Code": 1504,
+      "Name": "Fellow Traveler",
+      "FWidth": 1400,
+      "FHeight": 1100,
+      "FileType": "jpg",
+      "Filename": "1504_FellowTraveler_1400x1100.jpg"
+    },
+    "1505": {
+      "Code": 1505,
+      "Name": "The Aftermath",
+      "FWidth": 1400,
+      "FHeight": 1100,
+      "FileType": "jpg",
+      "Filename": "1505_TheAftermath_1400x1100.jpg"
+    },
+    "1506": {
+      "Code": 1506,
+      "Name": "Silent Snow Leopard",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1506_SilentSnowLeopard_1600x1200.jpg"
+    },
+    "1507": {
+      "Code": 1507,
+      "Name": "Lady Tiger Lily",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1507_LadyTigerLily_1600x1200.jpg"
+    },
+    "1508": {
+      "Code": 1508,
+      "Name": "ACurated Demeanor",
+      "FWidth": 1600,
+      "FHeight": 1260,
+      "FileType": "jpg",
+      "Filename": "1508_ACuratedDemeanor_1600x1260.jpg"
+    },
+    "1510": {
+      "Code": 1510,
+      "Name": "Street Faggot",
+      "FWidth": 1280,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1510_StreetFaggot_1280x1600.jpg"
+    },
+    "1511": {
+      "Code": 1511,
+      "Name": "Queen Of Iron Fist",
+      "FWidth": 1280,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1511_QueenOfIronFist_1280x1600.jpg"
+    },
+    "1514": {
+      "Code": 1514,
+      "Name": "Baby Boy Dying Under Hot Desert Sun",
+      "FWidth": 1280,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1514_BabyBoyDyingUnderHotDesertSun_1280x1600.jpg"
+    },
+    "1515": {
+      "Code": 1515,
+      "Name": "Alpha Beta Prison Star",
+      "FWidth": 1280,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1515_AlphaBetaPrisonStar_1280x1600.jpg"
+    },
+    "1524": {
+      "Code": 1524,
+      "Name": "Face Off I",
+      "FWidth": 1600,
+      "FHeight": 1080,
+      "FileType": "jpg",
+      "Filename": "1524_FaceOffI_1600x1080.jpg"
+    },
+    "1525": {
+      "Code": 1525,
+      "Name": "Face Off II",
+      "FWidth": 1600,
+      "FHeight": 1080,
+      "FileType": "jpg",
+      "Filename": "1525_FaceOffII_1600x1080.jpg"
+    },
+    "1529": {
+      "Code": 1529,
+      "Name": "Digital Muse",
+      "FWidth": 1400,
+      "FHeight": 1400,
+      "FileType": "jpg",
+      "Filename": "1529_DigitalMuse_1400x1400.jpg"
+    },
+    "1530": {
+      "Code": 1530,
+      "Name": "Prof Arg",
+      "FWidth": 1400,
+      "FHeight": 1400,
+      "FileType": "jpg",
+      "Filename": "1530_ProfArg_1400x1400.jpg"
+    },
+    "1601": {
+      "Code": 1601,
+      "Name": "Galactic Sad",
+      "FWidth": 1600,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1601_GalacticSad_1600x1600.jpg"
+    },
+    "1603": {
+      "Code": 1603,
+      "Name": "Honey Suckle",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1603_HoneySuckle_1440x1440.jpg"
+    },
+    "1604": {
+      "Code": 1604,
+      "Name": "Cosmic Traveller",
+      "FWidth": 1440,
+      "FHeight": 1429,
+      "FileType": "jpg",
+      "Filename": "1604_CosmicTraveller_1440x1429.jpg"
+    },
+    "1605": {
+      "Code": 1605,
+      "Name": "The Analysis",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1605_TheAnalysis_1440x1440.jpg"
+    },
+    "1606": {
+      "Code": 1606,
+      "Name": "Oscar Mike Adventure Times",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1606_OscarMikeAdventureTimes_1440x1440.jpg"
+    },
+    "1608": {
+      "Code": 1608,
+      "Name": "Magic Sad Main",
+      "FWidth": 1440,
+      "FHeight": 1152,
+      "FileType": "jpg",
+      "Filename": "1608_MagicSadMain_1440x1152.jpg"
+    },
+    "1609": {
+      "Code": 1609,
+      "Name": "Pilates At Seven Funeral At Eight",
+      "FWidth": 1440,
+      "FHeight": 1155,
+      "FileType": "jpg",
+      "Filename": "1609_PilatesAtSevenFuneralAtEight_1440x1155.jpg"
+    },
+    "1610": {
+      "Code": 1610,
+      "Name": "Le Dernier Jour",
+      "FWidth": 1440,
+      "FHeight": 1155,
+      "FileType": "jpg",
+      "Filename": "1610_LeDernierJour_1440x1155.jpg"
+    },
+    "1614": {
+      "Code": 1614,
+      "Name": "Inverse",
+      "FWidth": 1440,
+      "FHeight": 1132,
+      "FileType": "jpg",
+      "Filename": "1614_Inverse_1440x1132.jpg"
+    },
+    "1618": {
+      "Code": 1618,
+      "Name": "Sweat& Swagger",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1618_Sweat&Swagger_1440x1440.jpg"
+    },
+    "1619": {
+      "Code": 1619,
+      "Name": "Internal Revolutions",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1619_InternalRevolutions_1440x1440.jpg"
+    },
+    "1622": {
+      "Code": 1622,
+      "Name": "Little Girl With Orthopedic Brace",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1622_LittleGirlWithOrthopedicBrace_1440x1440.jpg"
+    },
+    "1623": {
+      "Code": 1623,
+      "Name": "Midnight Run",
+      "FWidth": 1440,
+      "FHeight": 1130,
+      "FileType": "jpg",
+      "Filename": "1623_MidnightRun_1440x1130.jpg"
+    },
+    "1631": {
+      "Code": 1631,
+      "Name": "Tom Selleck02",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1631_TomSelleck02_1440x1440.jpg"
+    },
+    "1632": {
+      "Code": 1632,
+      "Name": "Anti Beyond",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1632_AntiBeyond_1440x1440.jpg"
+    },
+    "1633": {
+      "Code": 1633,
+      "Name": "Night Sweats IICrisis",
+      "FWidth": 1440,
+      "FHeight": 1152,
+      "FileType": "jpg",
+      "Filename": "1633_NightSweatsIICrisis_1440x1152.jpg"
+    },
+    "1634": {
+      "Code": 1634,
+      "Name": "Night Sweats IDeathbed",
+      "FWidth": 1800,
+      "FHeight": 1252,
+      "FileType": "jpg",
+      "Filename": "1634_NightSweatsIDeathbed_1800x1252.jpg"
+    },
+    "1635": {
+      "Code": 1635,
+      "Name": "Night Sweats IIIAHigher Call",
+      "FWidth": 1800,
+      "FHeight": 1252,
+      "FileType": "jpg",
+      "Filename": "1635_NightSweatsIIIAHigherCall_1800x1252.jpg"
+    },
+    "1637": {
+      "Code": 1637,
+      "Name": "Killing Time",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1637_KillingTime_1600x1200.jpg"
+    },
+    "1639": {
+      "Code": 1639,
+      "Name": "Hesitation Mark",
+      "FWidth": 1440,
+      "FHeight": 1054,
+      "FileType": "jpg",
+      "Filename": "1639_HesitationMark_1440x1054.jpg"
+    },
+    "1640": {
+      "Code": 1640,
+      "Name": "Disappearing Act Tyler RIP",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1640_DisappearingActTylerRIP_1600x1200.jpg"
+    },
+    "1646": {
+      "Code": 1646,
+      "Name": "Sailor",
+      "FWidth": 1440,
+      "FHeight": 1160,
+      "FileType": "jpg",
+      "Filename": "1646_Sailor_1440x1160.jpg"
+    },
+    "1705": {
+      "Code": 1705,
+      "Name": "Lady In Yellow01",
+      "FWidth": 1200,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1705_LadyInYellow01_1200x1200.jpg"
+    },
+    "1706": {
+      "Code": 1706,
+      "Name": "Lady In Yellow02",
+      "FWidth": 1200,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1706_LadyInYellow02_1200x1200.jpg"
+    },
+    "1707": {
+      "Code": 1707,
+      "Name": "Vague Is One Letter Away From Vogue",
+      "FWidth": 1200,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1707_VagueIsOneLetterAwayFromVogue_1200x1200.jpg"
+    },
+    "1708": {
+      "Code": 1708,
+      "Name": "Apex",
+      "FWidth": 1200,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1708_Apex_1200x1200.jpg"
+    },
+    "1709": {
+      "Code": 1709,
+      "Name": "The Way Of Zen",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1709_TheWayOfZen_1600x1200.jpg"
+    },
+    "1710": {
+      "Code": 1710,
+      "Name": "An Act Of Virtue And Grace",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1710_AnActOfVirtueAndGrace_1600x1200.jpg"
+    },
+    "1711": {
+      "Code": 1711,
+      "Name": "In Rainbows",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1711_InRainbows_1600x1200.jpg"
+    },
+    "1712": {
+      "Code": 1712,
+      "Name": "The Comedy Of Humility",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1712_TheComedyOfHumility_1600x1200.jpg"
+    },
+    "1713": {
+      "Code": 1713,
+      "Name": "From Infinity To Innovation",
+      "FWidth": 1440,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1713_FromInfinityToInnovation_1440x1200.jpg"
+    },
+    "1714": {
+      "Code": 1714,
+      "Name": "Endless Flowers",
+      "FWidth": 1440,
+      "FHeight": 1875,
+      "FileType": "jpg",
+      "Filename": "1714_EndlessFlowers_1440x1875.jpg"
+    },
+    "1717": {
+      "Code": 1717,
+      "Name": "Jackie II",
+      "FWidth": 1200,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1717_JackieII_1200x1200.jpg"
+    },
+    "1720": {
+      "Code": 1720,
+      "Name": "Faheed",
+      "FWidth": 1520,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1720_Faheed_1520x1200.jpg"
+    },
+    "1721": {
+      "Code": 1721,
+      "Name": "Pennywise",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1721_Pennywise_1600x1200.jpg"
+    },
+    "1722": {
+      "Code": 1722,
+      "Name": "Night Cat",
+      "FWidth": 1200,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1722_NightCat_1200x1200.jpg"
+    },
+    "1724": {
+      "Code": 1724,
+      "Name": "Dawn",
+      "FWidth": 1200,
+      "FHeight": 1800,
+      "FileType": "jpg",
+      "Filename": "1724_Dawn_1200x1800.jpg"
+    },
+    "1725": {
+      "Code": 1725,
+      "Name": "Flower Girl",
+      "FWidth": 1500,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1725_FlowerGirl_1500x1200.jpg"
+    },
+    "1726": {
+      "Code": 1726,
+      "Name": "Neo Rauch",
+      "FWidth": 1200,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1726_NeoRauch_1200x1200.jpg"
+    },
+    "1727": {
+      "Code": 1727,
+      "Name": "Fabulous Thoughts",
+      "FWidth": 1500,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1727_FabulousThoughts_1500x1200.jpg"
+    },
+    "1728": {
+      "Code": 1728,
+      "Name": "Jordan Howard",
+      "FWidth": 1800,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1728_JordanHoward_1800x1200.jpg"
+    },
+    "1729": {
+      "Code": 1729,
+      "Name": "Bear",
+      "FWidth": 1600,
+      "FHeight": 11200,
+      "FileType": "jpg",
+      "Filename": "1729_Bear_1600x11200.jpg"
+    },
+    "1731": {
+      "Code": 1731,
+      "Name": "Landscape Illinois Project",
+      "FWidth": 1550,
+      "FHeight": 1080,
+      "FileType": "jpg",
+      "Filename": "1731_LandscapeIllinoisProject_1550x1080.jpg"
+    },
+    "1801": {
+      "Code": 1801,
+      "Name": "Color Study",
+      "FWidth": 1200,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1801_ColorStudy_1200x1600.jpg"
+    },
+    "1802": {
+      "Code": 1802,
+      "Name": "Duane",
+      "FWidth": 1250,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1802_Duane_1250x1600.jpg"
+    },
+    "1803": {
+      "Code": 1803,
+      "Name": "Paul",
+      "FWidth": 1250,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1803_Paul_1250x1600.jpg"
+    },
+    "1804": {
+      "Code": 1804,
+      "Name": "Mark Bradford",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1804_MarkBradford_1440x1440.jpg"
+    },
+    "1805": {
+      "Code": 1805,
+      "Name": "Laylah Ali",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1805_LaylahAli_1440x1440.jpg"
+    },
+    "1806": {
+      "Code": 1806,
+      "Name": "AMore Colorful Tomorrow",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "1806_AMoreColorfulTomorrow_1440x1440.jpg"
+    },
+    "1807": {
+      "Code": 1807,
+      "Name": "Cosmic Traveler",
+      "FWidth": 1220,
+      "FHeight": 1800,
+      "FileType": "jpg",
+      "Filename": "1807_CosmicTraveler_1220x1800.jpg"
+    },
+    "1808": {
+      "Code": 1808,
+      "Name": "Forbidden Fruit",
+      "FWidth": 2000,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1808_ForbiddenFruit_2000x1200.jpg"
+    },
+    "1821": {
+      "Code": 1808,
+      "Name": "Forbidden Fruit",
+      "FWidth": 2000,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1808_ForbiddenFruit_2000x1200.jpg"
+    },
+    "1810": {
+      "Code": 1810,
+      "Name": "IStill Remember",
+      "FWidth": 1440,
+      "FHeight": 1150,
+      "FileType": "jpg",
+      "Filename": "1810_IStillRemember_1440x1150.jpg"
+    },
+    "1811": {
+      "Code": 1811,
+      "Name": "No Homo",
+      "FWidth": 1200,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1811_NoHomo_1200x1200.jpg"
+    },
+    "1817": {
+      "Code": 1817,
+      "Name": "Sour Fruit",
+      "FWidth": 1200,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1817_SourFruit_1200x1200.jpg"
+    },
+    "1905": {
+      "Code": 1905,
+      "Name": "Gael",
+      "FWidth": 1200,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1905_Gael_1200x1600.jpg"
+    },
+    "1906": {
+      "Code": 1906,
+      "Name": "Dismay",
+      "FWidth": 1200,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "1906_Dismay_1200x1600.jpg"
+    },
+    "1907": {
+      "Code": 1907,
+      "Name": "Sinking Feeling",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1907_SinkingFeeling_1600x1200.jpg"
+    },
+    "1913": {
+      "Code": 1913,
+      "Name": "Aerobic Girl",
+      "FWidth": 1080,
+      "FHeight": 1080,
+      "FileType": "jpg",
+      "Filename": "1913_AerobicGirl_1080x1080.jpg"
+    },
+    "1914": {
+      "Code": 1914,
+      "Name": "Play Color",
+      "FWidth": 1600,
+      "FHeight": 1200,
+      "FileType": "jpg",
+      "Filename": "1914_PlayColor_1600x1200.jpg"
+    },
+    "1915": {
+      "Code": 1915,
+      "Name": "Belladonna",
+      "FWidth": 1080,
+      "FHeight": 1080,
+      "FileType": "jpg",
+      "Filename": "1915_Belladonna_1080x1080.jpg"
+    },
+    "1917": {
+      "Code": 1917,
+      "Name": "Crying Girl",
+      "FWidth": 1200,
+      "FHeight": 930,
+      "FileType": "jpg",
+      "Filename": "1917_CryingGirl_1200x930.jpg"
+    },
+    "1918": {
+      "Code": 1918,
+      "Name": "Daydreamer",
+      "FWidth": 1080,
+      "FHeight": 1080,
+      "FileType": "jpg",
+      "Filename": "1918_Daydreamer_1080x1080.jpg"
+    },
+    "1926": {
+      "Code": 1926,
+      "Name": "Mellody Hobson",
+      "FWidth": 1400,
+      "FHeight": 1680,
+      "FileType": "jpg",
+      "Filename": "1926_MellodyHobson_1400x1680.jpg"
+    },
+    "1931": {
+      "Code": 1931,
+      "Name": "Harrison Ford",
+      "FWidth": 900,
+      "FHeight": 1080,
+      "FileType": "jpg",
+      "Filename": "1931_HarrisonFord_900x1080.jpg"
+    },
+    "2001": {
+      "Code": 2001,
+      "Name": "Donna Zarcone",
+      "FWidth": 1400,
+      "FHeight": 1680,
+      "FileType": "jpg",
+      "Filename": "2001_DonnaZarcone_1400x1680.jpg"
+    },
+    "2002": {
+      "Code": 2002,
+      "Name": "Angry Bird",
+      "FWidth": 1240,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "2002_AngryBird_1240x1600.jpg"
+    },
+    "2003": {
+      "Code": 2003,
+      "Name": "Panic Time",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "2003_PanicTime_1440x1440.jpg"
+    },
+    "2004": {
+      "Code": 2004,
+      "Name": "AStoic In Bloom",
+      "FWidth": 1440,
+      "FHeight": 1440,
+      "FileType": "jpg",
+      "Filename": "2004_AStoicInBloom_1440x1440.jpg"
+    },
+    "2005": {
+      "Code": 2005,
+      "Name": "Marissa",
+      "FWidth": 1260,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "2005_Marissa_1260x1600.jpg"
+    },
+    "2008": {
+      "Code": 2008,
+      "Name": "Isaac",
+      "FWidth": 1260,
+      "FHeight": 1600,
+      "FileType": "jpg",
+      "Filename": "2008_Isaac_1260x1600.jpg"
+    }
+  }
+
+  export default CanvasCatalog
