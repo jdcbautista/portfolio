@@ -24,11 +24,12 @@ jobs:
       # the ~7GB hosted runner mid-transform. Add swap so the build fits.
       - name: Add swap space
         run: |
-          sudo fallocate -l 8G /swapfile
-          sudo chmod 600 /swapfile
-          sudo mkswap /swapfile
-          sudo swapon /swapfile
-          free -h
+          echo "before:"; free -h; nproc
+          sudo fallocate -l 10G /mnt/swapfile
+          sudo chmod 600 /mnt/swapfile
+          sudo mkswap /mnt/swapfile
+          sudo swapon /mnt/swapfile
+          echo "after:"; free -h; swapon --show
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
