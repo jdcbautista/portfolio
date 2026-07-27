@@ -25,14 +25,14 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci
-      - name: Build
-        timeout-minutes: 15
-        run: |
-          ( while true; do echo "[MON $(date +%T)] $(free -m | awk '/Mem:/{printf "used %d free %d avail %d / %d MB",$3,$4,$7,$2}')"; sleep 8; done ) &
-          MON=$!
-          set +e; npm run build; RC=$?; set -e
-          kill "$MON" 2>/dev/null || true
-          echo "=== build rc=$RC ==="; exit $RC
+      - run: npm run build
+        env:
+          # On the 16GB runner V8's default heap ceiling is high enough that the
+          # three.js build accumulates garbage up to ~16GB and gets OOM-killed.
+          # Capping the heap forces GC so it completes at a few GB. (See git
+          # history: Vite was also pinned to 7 for a rollup/pure-V8 build so this
+          # cap actually bounds the memory.)
+          NODE_OPTIONS: --max-old-space-size=4096
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
