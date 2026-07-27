@@ -20,33 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # The three.js bundle makes `vite build` peak at ~7GB RSS, which OOM-kills
-      # the ~7GB hosted runner mid-transform. Add swap so the build fits.
-      - name: Add swap space
-        run: |
-          echo "before:"; free -h; nproc
-          sudo fallocate -l 10G /mnt/swapfile
-          sudo chmod 600 /mnt/swapfile
-          sudo mkswap /mnt/swapfile
-          sudo swapon /mnt/swapfile
-          echo "after:"; free -h; swapon --show
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: npm
       - run: npm ci
-      - name: Build (instrumented)
-        timeout-minutes: 20
-        run: |
-          ( while true; do echo "[MON $(date +%T)] $(free -m | awk '/Mem:/{printf "mem %d/%d MB",$3,$2}') | $(free -m | awk '/Swap:/{printf "swap %d/%d MB",$3,$2}')"; sleep 10; done ) &
-          MON=$!
-          set +e
-          npm run build
-          RC=$?
-          set -e
-          kill "$MON" 2>/dev/null || true
-          echo "=== npm run build exit code: $RC ==="
-          exit $RC
+      - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
